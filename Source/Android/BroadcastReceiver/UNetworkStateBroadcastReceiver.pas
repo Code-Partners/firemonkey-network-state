@@ -2,6 +2,7 @@ unit UNetworkStateBroadcastReceiver;
 
 interface
 
+{$IFDEF ANDROID}
 uses
   System.SysUtils, System.Classes, Androidapi.JNI.GraphicsContentViewText,
   Androidapi.helpers, UBroadcastReceiver, Androidapi.JNI.Net, Androidapi.JNI.OS,
@@ -18,9 +19,11 @@ type
       AOwner: TComponent; AOnConnectivityAction: TNotifyEvent
     ); reintroduce;
   end;
+{$ENDIF}
 
 implementation
 
+{$IFDEF ANDROID}
 const
   CONNECTIVITY_ACTION = 'android.net.conn.CONNECTIVITY_CHANGE';
 
@@ -61,5 +64,6 @@ begin
     end;
   end;
 end;
+{$ENDIF}
 
 end.

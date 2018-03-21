@@ -2,6 +2,7 @@ unit UNetworkState.Android;
 
 interface
 
+{$IFDEF ANDROID}
 uses
   System.SysUtils, System.Classes, UNetworkState, UNetworkStateBroadcastReceiver,
   Androidapi.JNIBridge, Androidapi.JNI.GraphicsContentViewText,
@@ -22,8 +23,11 @@ type
     constructor Create(AOwner: TComponent;
       AOnChange: TNetworkStateChangeEvent); reintroduce; override;
   end;
+{$ENDIF}
 
 implementation
+
+{$IFDEF ANDROID}
 
 { TAndroidNetworkState }
 
@@ -79,5 +83,7 @@ begin
   else
     Result := nsDisconnected;
 end;
+
+{$ENDIF}
 
 end.

@@ -2,6 +2,7 @@ unit CaptiveNetwork;
 
 interface
 
+{$IFDEF IOS}
 uses
   Macapi.CoreFoundation;
 
@@ -18,6 +19,7 @@ function CNCopySupportedInterfaces: CFArrayRef; cdecl;
   external libSystemConfiguration name _PU + 'CNCopySupportedInterfaces';
 function CNCopyCurrentNetworkInfo(interfaceName: CFStringRef): CFDictionaryRef; cdecl;
   external libSystemConfiguration name _PU + 'CNCopyCurrentNetworkInfo';
+{$ENDIF}
 
 implementation
 

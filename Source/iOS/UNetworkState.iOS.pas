@@ -2,6 +2,7 @@ unit UNetworkState.iOS;
 
 interface
 
+{$IFDEF IOS}
 uses
   System.SysUtils, System.Classes, UNetworkState, Macapi.ObjectiveC,
   Macapi.CoreFoundation, iOSApi.CocoaTypes, iOSApi.Foundation,
@@ -78,7 +79,11 @@ type
   {$ENDIF}
 {$ENDIF}
 
+{$ENDIF}
+
 implementation
+
+{$IFDEF IOS}
 
 { TiOSNetworkState }
 
@@ -133,6 +138,8 @@ begin
     end
   );
 end;
+
+{$ENDIF}
 
 initialization
 

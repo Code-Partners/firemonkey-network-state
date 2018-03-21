@@ -2,6 +2,7 @@ unit SCNetworkReachability;
 
 interface
 
+{$IFDEF IOS}
 uses
   Macapi.CoreFoundation, Posix.SysSocket, Macapi.Dispatch;
 
@@ -68,6 +69,7 @@ function SCNetworkReachabilityUnscheduleFromRunLoop(target: SCNetworkReachabilit
   external libSystemConfiguration name _PU + 'SCNetworkReachabilityUnscheduleFromRunLoop';
 function SCNetworkReachabilitySetDispatchQueue(target: SCNetworkReachabilityRef; queue: dispatch_queue_t): Boolean; cdecl;
   external libSystemConfiguration name _PU + 'SCNetworkReachabilitySetDispatchQueue';
+{$ENDIF}
 
 implementation
 

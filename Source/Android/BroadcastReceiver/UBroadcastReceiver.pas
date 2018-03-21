@@ -2,6 +2,7 @@ unit UBroadcastReceiver;
 
 interface
 
+{$IFDEF ANDROID}
 uses
   System.SysUtils, System.Classes, Androidapi.JNIBridge, Androidapi.JNI.Embarcadero,
   Androidapi.JNI.GraphicsContentViewText, Androidapi.JNI.JavaTypes, Androidapi.helpers;
@@ -37,11 +38,13 @@ type
     destructor Destroy; override;
     procedure AddActions(const Args: array of JString);
   end;
+{$ENDIF}
 
 implementation
 
 { TBroadcastReceiver }
 
+{$IFDEF ANDROID}
 constructor TBroadcastReceiver.Create(AOwner: TComponent; aOnReceiveProc: TOnReceive);
 begin
   inherited Create(AOwner);
@@ -99,6 +102,7 @@ begin
   if Assigned(fOwner.fOnReceive) then
     fOwner.fOnReceive(Context, Intent, fReceiver.getResultCode);
 end;
+{$ENDIF}
 
 end.
 
