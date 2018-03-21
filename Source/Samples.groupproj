@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{369ED243-87D7-4983-85D4-095C025C2B1B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Android\Samples\AndroidDelphiNetworkStateSample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="iOS\Samples\iOSDelphiNetworkStateSample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Android\Samples\AndroidCppNetworkStateSample.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="iOS\Samples\iOSCppNetworkStateSample.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AndroidDelphiNetworkStateSample">
+        <MSBuild Projects="Android\Samples\AndroidDelphiNetworkStateSample.dproj"/>
+    </Target>
+    <Target Name="AndroidDelphiNetworkStateSample:Clean">
+        <MSBuild Projects="Android\Samples\AndroidDelphiNetworkStateSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AndroidDelphiNetworkStateSample:Make">
+        <MSBuild Projects="Android\Samples\AndroidDelphiNetworkStateSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="iOSDelphiNetworkStateSample">
+        <MSBuild Projects="iOS\Samples\iOSDelphiNetworkStateSample.dproj"/>
+    </Target>
+    <Target Name="iOSDelphiNetworkStateSample:Clean">
+        <MSBuild Projects="iOS\Samples\iOSDelphiNetworkStateSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="iOSDelphiNetworkStateSample:Make">
+        <MSBuild Projects="iOS\Samples\iOSDelphiNetworkStateSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AndroidCppNetworkStateSample">
+        <MSBuild Projects="Android\Samples\AndroidCppNetworkStateSample.cbproj"/>
+    </Target>
+    <Target Name="AndroidCppNetworkStateSample:Clean">
+        <MSBuild Projects="Android\Samples\AndroidCppNetworkStateSample.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AndroidCppNetworkStateSample:Make">
+        <MSBuild Projects="Android\Samples\AndroidCppNetworkStateSample.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="iOSCppNetworkStateSample">
+        <MSBuild Projects="iOS\Samples\iOSCppNetworkStateSample.cbproj"/>
+    </Target>
+    <Target Name="iOSCppNetworkStateSample:Clean">
+        <MSBuild Projects="iOS\Samples\iOSCppNetworkStateSample.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="iOSCppNetworkStateSample:Make">
+        <MSBuild Projects="iOS\Samples\iOSCppNetworkStateSample.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AndroidDelphiNetworkStateSample;iOSDelphiNetworkStateSample;AndroidCppNetworkStateSample;iOSCppNetworkStateSample"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AndroidDelphiNetworkStateSample:Clean;iOSDelphiNetworkStateSample:Clean;AndroidCppNetworkStateSample:Clean;iOSCppNetworkStateSample:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AndroidDelphiNetworkStateSample:Make;iOSDelphiNetworkStateSample:Make;AndroidCppNetworkStateSample:Make;iOSCppNetworkStateSample:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
