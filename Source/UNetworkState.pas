@@ -17,7 +17,7 @@ type
     FOnChange: TNetworkStateChangeEvent;
   protected
     procedure DoOnChange;
-    function GetCurrentValue: TNetworkStateValue; virtual; abstract;
+    function GetCurrentValue: TNetworkStateValue; virtual;
 
     constructor Create(AOwner: TComponent;
       AOnChange: TNetworkStateChangeEvent); reintroduce; virtual;
@@ -55,8 +55,17 @@ begin
   {$IF DEFINED(Android)}
     Result := TAndroidNetworkState.Create(AOwner, AOnChange);
   {$ELSEIF DEFINED(iOS)}
-    Result := TiOSNetworkState.Create(AOwner, AOnChange);
-  {$IFEND}
+    {$IF DEFINED(CPUARM)} // real device
+      Result := TiOSNetworkState.Create(AOwner, AOnChange);
+    {$ELSEIF DEFINED(CPUX86)} // simulator
+      Result := TNetworkState.Create(AOwner, AOnChange);
+    {$ENDIF}
+  {$ENDIF}
+end;
+
+function TNetworkState.GetCurrentValue: TNetworkStateValue;
+begin
+  Result := nsConnectedWifi;
 end;
 
 procedure TNetworkState.DoOnChange;
