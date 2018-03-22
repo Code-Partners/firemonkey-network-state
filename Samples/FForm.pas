@@ -37,8 +37,10 @@ begin
     self.Memo1.Lines.Add('On startup: Connected with WiFi')
   else if self.FNetworkState.CurrentValue = nsConnectedMobileData then
     self.Memo1.Lines.Add('On startup: Connected with mobile data')
+  else if self.FNetworkState.CurrentValue = nsDisconnected then
+    self.Memo1.Lines.Add('On startup: Disconnected')
   else
-    self.Memo1.Lines.Add('On startup: Disconnected');
+    self.Memo1.Lines.Add('On startup: Unknown');
 end;
 
 procedure TFormSample.DoOnChange(Sender: TObject; Value: TNetworkStateValue);
@@ -47,8 +49,10 @@ begin
     self.Memo1.Lines.Add('On change: Connected with WiFi')
   else if Value = nsConnectedMobileData then
     self.Memo1.Lines.Add('On change: Connected with mobile data')
+  else if self.FNetworkState.CurrentValue = nsDisconnected then
+    self.Memo1.Lines.Add('On change: Disconnected')
   else
-    self.Memo1.Lines.Add('On change: Disconnected');
+    self.Memo1.Lines.Add('On change: Unknown');
 end;
 
 procedure TFormSample.Button1Click(Sender: TObject);
@@ -57,8 +61,10 @@ begin
     self.Memo1.Lines.Add('Button1 Click: Connected with WiFi')
   else if self.FNetworkState.CurrentValue = nsConnectedMobileData then
     self.Memo1.Lines.Add('Button1 Click: Connected with mobile data')
+  else if self.FNetworkState.CurrentValue = nsDisconnected then
+    self.Memo1.Lines.Add('Button1 Click: Disconnected')
   else
-    self.Memo1.Lines.Add('Button1 Click: Disconnected');
+    self.Memo1.Lines.Add('Button1 Click: Unknown');
 end;
 
 end.

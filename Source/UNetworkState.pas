@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes;
 
 type
-  TNetworkStateValue = (nsConnectedWifi = 1, nsConnectedMobileData = 2, nsDisconnected = 3);
+  TNetworkStateValue = (nsUnknown = 0, nsConnectedWifi = 1, nsConnectedMobileData = 2, nsDisconnected = 3);
 
   TNetworkStateChangeEvent = procedure (Sender: TObject;
     Value: TNetworkStateValue) of object;
@@ -65,7 +65,7 @@ end;
 
 function TNetworkState.GetCurrentValue: TNetworkStateValue;
 begin
-  Result := nsConnectedWifi;
+  Result := nsUnknown;
 end;
 
 procedure TNetworkState.DoOnChange;

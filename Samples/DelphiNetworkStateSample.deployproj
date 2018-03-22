@@ -5,8 +5,8 @@
     </ProjectExtensions>
     <PropertyGroup>
         <DeviceId Condition="'$(Platform)'=='Android'">ad051703c071eb11e2</DeviceId>
-        <DeviceId Condition="'$(Platform)'=='iOSDevice32'">03710820612b5ae95f0699fa6cdd35b5658bc656</DeviceId>
-        <DeviceId Condition="'$(Platform)'=='iOSDevice64'">dc398986acabb53bce25b5f6a2661fdbf3da125b</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice32'">dc398986acabb53bce25b5f6a2661fdbf3da125b</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice64'">03710820612b5ae95f0699fa6cdd35b5658bc656</DeviceId>
         <DeviceId Condition="'$(Platform)'=='iOSSimulator'">6F516E0B-AB13-4A53-9AC0-6502F57376A6</DeviceId>
     </PropertyGroup>
     <ItemGroup Condition="'$(Platform)'=='iOSDevice64'">
@@ -19,19 +19,19 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_57x57.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_144x144.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>DelphiNetworkStateSample.app\</RemoteDir>
-            <RemoteName>FM_ApplicationIcon_57x57.png</RemoteName>
-            <DeployClass>iPhone_AppIcon57</DeployClass>
+            <RemoteName>FM_ApplicationIcon_144x144.png</RemoteName>
+            <DeployClass>iPad_AppIcon144</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_144x144.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_57x57.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>DelphiNetworkStateSample.app\</RemoteDir>
-            <RemoteName>FM_ApplicationIcon_144x144.png</RemoteName>
-            <DeployClass>iPad_AppIcon144</DeployClass>
+            <RemoteName>FM_ApplicationIcon_57x57.png</RemoteName>
+            <DeployClass>iPhone_AppIcon57</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -953,19 +953,19 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_58x58.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_100x100.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>DelphiNetworkStateSample.app\</RemoteDir>
-            <RemoteName>FM_SpotlightSearchIcon_58x58.png</RemoteName>
-            <DeployClass>iPhone_Spotlight58</DeployClass>
+            <RemoteName>FM_SpotlightSearchIcon_100x100.png</RemoteName>
+            <DeployClass>iPad_SpotLight100</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_100x100.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_58x58.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>DelphiNetworkStateSample.app\</RemoteDir>
-            <RemoteName>FM_SpotlightSearchIcon_100x100.png</RemoteName>
-            <DeployClass>iPad_SpotLight100</DeployClass>
+            <RemoteName>FM_SpotlightSearchIcon_58x58.png</RemoteName>
+            <DeployClass>iPhone_Spotlight58</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>

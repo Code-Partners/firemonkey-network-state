@@ -1,12 +1,12 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{369ED243-87D7-4983-85D4-095C025C2B1B}</ProjectGuid>
+        <ProjectGuid>{D148EF59-0DAF-430B-8DAF-EFA870DE10C1}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\Samples\DelphiNetworkStateSample.dproj">
+        <Projects Include="DelphiNetworkStateSample.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\Samples\CppNetworkStateSample.cbproj">
+        <Projects Include="CppNetworkStateSample.cbproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -18,22 +18,22 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="DelphiNetworkStateSample">
-        <MSBuild Projects="..\Samples\DelphiNetworkStateSample.dproj"/>
+        <MSBuild Projects="DelphiNetworkStateSample.dproj"/>
     </Target>
     <Target Name="DelphiNetworkStateSample:Clean">
-        <MSBuild Projects="..\Samples\DelphiNetworkStateSample.dproj" Targets="Clean"/>
+        <MSBuild Projects="DelphiNetworkStateSample.dproj" Targets="Clean"/>
     </Target>
     <Target Name="DelphiNetworkStateSample:Make">
-        <MSBuild Projects="..\Samples\DelphiNetworkStateSample.dproj" Targets="Make"/>
+        <MSBuild Projects="DelphiNetworkStateSample.dproj" Targets="Make"/>
     </Target>
     <Target Name="CppNetworkStateSample">
-        <MSBuild Projects="..\Samples\CppNetworkStateSample.cbproj"/>
+        <MSBuild Projects="CppNetworkStateSample.cbproj"/>
     </Target>
     <Target Name="CppNetworkStateSample:Clean">
-        <MSBuild Projects="..\Samples\CppNetworkStateSample.cbproj" Targets="Clean"/>
+        <MSBuild Projects="CppNetworkStateSample.cbproj" Targets="Clean"/>
     </Target>
     <Target Name="CppNetworkStateSample:Make">
-        <MSBuild Projects="..\Samples\CppNetworkStateSample.cbproj" Targets="Make"/>
+        <MSBuild Projects="CppNetworkStateSample.cbproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="DelphiNetworkStateSample;CppNetworkStateSample"/>
